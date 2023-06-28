@@ -1,0 +1,133 @@
+tipo = []
+destinatario = []
+rutdes = []
+preciode = []
+pesokgs = []
+nomciudad = []
+XD = 1
+
+def menu ():
+    print (""" 
+            MENU 
+    
+    Opcion 1 : Grabar  
+    Opcion 2 : Buscar
+    Opcion 3 : Listar
+    Opcion 4 : Salir
+    """)
+
+
+def grabar ():
+    xd = 10
+    xd2 = 20
+    xd3 = 30
+    xd4 = 40
+    xd5 = 50
+    xd6 = 60
+    print ("""A selecionado guardar en esta segcion debe ingresar los datos de la encomienda """)
+    while xd == 10: 
+        try:
+            print ("ingrese el tipo de paquete o sobre")
+            t = input()
+            if t == ("paquete") or t == ("sobre"):
+                tipo.append(t)
+                xd = 11
+            else:
+                print ("deve de ingresar paquete o sobre")
+        except:
+            print("error")
+
+    while xd2 == 20:
+        try:
+            print ("ingrese el nombre destinatario")
+            no = input()
+            if len(no) > 2 and len(no) < 21: 
+                    destinatario.append(no)
+                    xd2 =21
+            else:
+                print ("deve de ingresar nombre destinatario adecuado") 
+        except:
+            print("error")
+        
+        
+    while xd3 == 30:
+        try:
+            print ("ingrese el rut del destinatario ejemplo 19836213-1")
+            rut = input("")
+            if rut[-2] == '-': 
+                rutdes.append(rut)
+                xd3= 31
+            else:
+                print ("deve de ingresar el rut correctamente")
+        except:
+            print("error")
+
+    while xd4 == 40:
+        try:    
+            print ("ingrese el peso en kgs")
+            peso = float(input())
+            if peso >= 0.1: 
+                pesokgs.append(peso)
+                xd4 = 41
+            else:
+                print ("deve de ingresar el peso correctamente") 
+        except:
+            print("error")
+
+  
+    while xd5 == 50:
+        try:    
+            print ("ingrese el precio el minimo es 2000")
+            precio = int(input(""))
+            if precio >= 2000: 
+                preciode.append(precio)
+                xd5 = 51
+            else:
+                print ("deve de ingresar el precio correctamente") 
+        except:
+            print("error")
+    
+    while xd6== 60:
+        try:
+            print ("ingrese el nombre de la ciudad")
+            ciudad = input("ciudad de destino")
+            if len(ciudad) >= 3: 
+                nomciudad.append(ciudad)
+                xd6 = 61
+            else:
+                print ("deve de ingresar la ciudad correctamente") 
+        except:
+            print("error")
+
+def buscar ():
+    print("ingrese el rut")
+    bus = input()
+
+def listar ():
+    print("a seleccionado listar")
+    
+    print(F""" 
+    |-------+----------------+-----------+--------------+-------------+------------|
+    |TIPO   | DESTINATARIO   | RUT       | PRECIO       | PESO        | CIUDAD     |
+    """)
+    for i in range(len(tipo)):
+        print(tipo[i])   
+
+while XD == 1:
+    try:
+        print (menu())
+        op = int(input("Seleccione una opcion: "))
+        if op == 1:
+            grabar()
+        if op == 2:
+            buscar()
+        if op == 3:
+            listar ()
+        if op == 4:
+            XD = 2
+    except:
+        print("error")
+
+
+
+
